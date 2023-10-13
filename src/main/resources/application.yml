@@ -1,0 +1,7 @@
+server:
+  port: 9797
+spring:
+  application:
+    name: database-view
+  profiles:
+    active: sit
