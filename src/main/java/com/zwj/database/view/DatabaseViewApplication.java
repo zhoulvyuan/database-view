@@ -24,12 +24,20 @@ public class DatabaseViewApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(DatabaseViewApplication.class, args);
 		databaseViewHandle.handle();
 		// 弹出一个带有选项的确认框
-		int result = JOptionPane.showConfirmDialog(null, "数据库描述文件生成成功！", "确认", JOptionPane.DEFAULT_OPTION);
-		if (result == JOptionPane.OK_OPTION) {
-			context.close();
-		} else {
-			context.close();
+		try {
+			System.setProperty("java.awt.headless", "false");
+			int result = JOptionPane.showConfirmDialog(null, "数据库描述文件生成成功！", "确认", JOptionPane.DEFAULT_OPTION);
+			if (result == JOptionPane.OK_OPTION) {
+				context.close();
+			} else {
+				context.close();
+			}
+		} catch (Exception e) {} finally {
+			if (context.isActive()) {
+				context.close();
+			}
 		}
+
 
 	}
 
