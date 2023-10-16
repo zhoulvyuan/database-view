@@ -1,26 +1,14 @@
-# Read Me First
-The following was discovered as part of building this project:
+# 使用手册
+## 修改config/application.yml中的配置
+    数据库配置根据实际需要生成的数据库系统调整
+	file.export.path：数据库描述文件输出目录
+    file.export.version: 文件版本
+    file.export.description: 文件名称描述，包含中文时需要转义为Unicode码
+    file.export.file-type: 文件类型，支持htm,word,md三种类型，默认html
 
-* The JVM level was changed from '1.8' to '17', review the [JDK Version Range](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions#jdk-version-range) on the wiki for more details.
+## 双击可执行文件
+database-view.exe
 
-# Getting Started
-
-### Reference Documentation
-For further reference, please consider the following sections:
-
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.1.4/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.1.4/maven-plugin/reference/html/#build-image)
-* [JDBC API](https://docs.spring.io/spring-boot/docs/3.1.4/reference/htmlsingle/index.html#data.sql)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.1.4/reference/htmlsingle/index.html#web)
-
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Accessing Relational Data using JDBC with Spring](https://spring.io/guides/gs/relational-data-access/)
-* [Managing Transactions](https://spring.io/guides/gs/managing-transactions/)
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+## 结果查看
+程序执行完成后可在默认output路径中查看数据库文件，若file.export.path有做调整，则在调整的目录中查看文件
 
