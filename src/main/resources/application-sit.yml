@@ -12,3 +12,4 @@ file:
     path: /app/database/view
     version: 0.0.1
     description: "\u76d8\u76c8\u8d44\u4ea7\u6570\u636e\u5e93\u6587\u6863\u751f\u6210"
+    file-type: html

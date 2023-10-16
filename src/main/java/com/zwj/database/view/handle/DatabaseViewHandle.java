@@ -6,6 +6,7 @@ import cn.smallbun.screw.core.engine.EngineFileType;
 import cn.smallbun.screw.core.engine.EngineTemplateType;
 import cn.smallbun.screw.core.execute.DocumentationExecute;
 import cn.smallbun.screw.core.process.ProcessConfig;
+import com.zwj.database.view.common.DataBaseConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
@@ -36,6 +37,9 @@ public class DatabaseViewHandle {
     @Value("${file.export.description}")
     private String description;
 
+    @Value("${file.export.file-type}")
+    private String fileType;
+
     public void handle() {
         DataSource dataSourceMysql = applicationContext.getBean(DataSource.class);
 
@@ -46,7 +50,7 @@ public class DatabaseViewHandle {
                 // 打开目录
                 .openOutputDir(false)
                 // 文件类型
-                .fileType(EngineFileType.HTML)
+                .fileType(DataBaseConstant.getEngineFileTypeByType(fileType))
                 // 生成模板实现
                 .produceType(EngineTemplateType.freemarker).build();
 
